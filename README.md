@@ -33,14 +33,16 @@ För varje DB skappade en package i SSIS med sina respektiva *dataflow*. Åtmins
 
 
 ### I.SourceSystems
-####Första steg: hämta data!
+#### Första steg: hämta data!
 
 <img width="493" alt="image" src="https://user-images.githubusercontent.com/19158658/169915301-934cb825-f1d7-43d0-bfbf-39e553d37851.png">
 
 Arkivet består av sex stora filer utan format som fungerar som csv-filer och motsvarar till året 2003-2008 med ungefar 42 milljoner rader. Det finns också tre små csv-filer som behåller information om flygplatser, aeroplanen och carrier.
 
-I varje ”package” börjar jag med en "Truncate table" som undviker dubbletter. Efter det skapade jag en ForeachLoop som anropar tabeller med året. I den här delen använder jag suggest type också för att räkna och bestämma vilken Datatype ska jag använda. Undersökes 200,000 rader för att nå lite mer noggrannhet.  
-Efter det kör jag samtidigt de andra tabellerna för att effektivisera processen. 
+I varje *package* börjar jag med en *Truncate table* som undviker dubbletter. Efter det skapade jag en *ForeachLoop* som anropar tabeller med året. I den här delen använder jag suggest type också för att räkna och bestämma vilken Datatype ska jag använda. Undersökes 200,000 rader för att nå lite mer noggrannhet.  
+Efter det kör jag samtidigt de andra tabellerna för att effektivisera processen. Jag gjorde extra processen i Data-plane för att den tabellen hade citation tecken i några kolumner men andra hade inte det. Då behövde jag hantera *Flat File Connection Manager Editor* column
+
+
 
 
 
