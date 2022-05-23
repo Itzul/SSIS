@@ -23,7 +23,7 @@ ______
 
 ### Intro
 
-#### SSIS delen står delat i tre olika DB:
+#### SSIS delen består av tre olika DB:
 
 * I.SourceSystems
 * II.StagingArea
