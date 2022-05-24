@@ -50,9 +50,12 @@ Efter det kör jag samtidigt de andra tabellerna för att effektivisera processe
 <img width="590" alt="image" src="https://user-images.githubusercontent.com/19158658/169920256-fef8f6eb-55b9-47ab-974e-e165a4eb8f05.png">
 
 
+I varje *package* börjar jag med en *Truncate table* som undviker dubbletter.Efter det ska jag hämta data från SourceSystems DB och börjar redigera enligt inlämningsuppgiften:
 
+<img width="660" alt="image" src="https://user-images.githubusercontent.com/19158658/169990096-b04d5cd2-92d4-43d6-9e12-43b140a5189d.png">
 
+Jag ritade några boxer för att tydligt förklara min process och jag försökte i varje Package hålla en struktur med nivåer för att ha lite ordning i processen. Grönbox är transformationer, blåbox är conditional split och violeta är ”NA”- tabell. 
 
-
+Jag igångsatte transformationen med att kontrollera *CancellationCode* i *Derived Column*. Först kontrollerade alla null-värde och konverterade till ”N” och sen kontrollerade alla ”NA” till ”N”(Jag kunde göra det i samma element men jag ville så för att kunna använda *Data viewer* och kolla att allt stämmer)  Efter det använde jag *conditional split* för att filtrera, de som hade Null eller NA skulle gå till ”NA-Tabell” (violetaboxen). 
 
 
