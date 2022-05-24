@@ -56,5 +56,24 @@ I varje *package* börjar jag med en *Truncate table* som undviker dubbletter.Ef
 Jag ritade några boxer för att tydligt förklara min process och jag försökte i varje Package hålla en struktur med nivåer för att ha lite ordning i processen. Grönbox är transformationer, blåbox är conditional split och violeta är ”NA”- tabell. 
 
 Jag igångsatte transformationen med att kontrollera *CancellationCode* i *Derived Column*. Först kontrollerade alla null-värde och konverterade till ”N” och sen kontrollerade alla ”NA” till ”N”(Jag kunde göra det i samma element men jag ville så för att kunna använda *Data viewer* och kolla att allt stämmer)  Efter det använde jag *conditional split* för att filtrera, de som hade Null eller NA skulle gå till ”NA-Tabell” (violetaboxen). 
+  
+  *CRSDepTime, CRSArrTime, ArrTime, och DepTime* ska blir data typ TIME samt Date ska bli date och jag vill också att ha den som INT för att kunna anvädna den som en PK i nästa steg. Då blir först kontrollera att de har korrekt längt och att de är String (för att jag vill addera ':' i Derived Column och en ifsats med substring för att ha rätt strukturen innan jag konverterade till tidtype). Jag gjorde något likande med Date, som hanterade samtidigt som tidtype (men istället för att addera ':' jag adderade '-' då datumet blev yyyy-mm-dd). De som hade andra strukturen var plockat till min slask tabell "NA".
+   Efter det min data var redo att skapa en ny tabell som kommer att använda sig som Factatabell. Det var tid att transformera och fingöra de andra tabeller som kommer att använda sig som dimensioner i nästa steg. I Carrier data jag kontrollerade att alla NULL-VÄRDE var ändras till 'NA'. Jag byte nämn från column Code till CarrierID för att tydligtgöra nästa steg med PK och FK. Jag hanterade på samma sätt Airport data och byte namn på några kolumner till: 
+   
+   <img width="482" alt="image" src="https://user-images.githubusercontent.com/19158658/170046928-340fefbd-0437-4700-a80a-22c88a2e3eee.png">
+
+I Planedata var lite samma process. Jag byte några år som hade 'NONE' till 'NA'. RoutesData var en ny tabell som kom fram med hjälp av två Sqlcomander: *SELECT DISTINCT Origin, Dest AS Destination, Distance FROM DataFlight.* Jag lagrade en ny tabell som hette: "Routes" och sen skapade en till Sqlcommand som gjorde en kolumn till med identity för att kunna indexera den:*"ALTER TABLE Routes ADD RouteID int identity(1,1.)* Efter det jag var redo för att skappa min StarSchema i  en ny DB DW, men uptäkte jag att mina null-värde i CancellationCode hade inte ändrats till "N" då behövde skriva en code till: "" för att ändra de, i den element som heter "Detaljer" och nu var jag redo! 
+
+### III.DW
+#### Sista steg: StarSchema!
 
 
+<img width="773" alt="image" src="https://user-images.githubusercontent.com/19158658/170050750-b59a8156-423f-4fe0-912d-a052bb5d1646.png">
+
+Sista steget var min favorit! Jag började som vanligt att tomma tabellerna och den har gången jag behövde innan dess radera också PK som kommer jag att framkalla när jag skapar nya tabeller. Jag använder också Sequence Container för att kunna optimisera processen med Factatabell och Dimensioner. Processen börjades med FactaTabell som hade inte RoutesID då behövde använda en *Lookup* för att addera till min  kära FactaTabell kolumnen *RoutesID* Efter det lagrade jag tabellen som *FactFlights* och skapade en till kolumn som gjorde jag innan med Routes *Indentity(1,1)*. Jag skapade en tabell tid som DimDate med SQLcode, som kommer att använda sig i SSAS process. För att kunna göra en bra DimRoutes använde jag två *lookup* med Airports. Första lookup var för att hantera ursprung och andra var för att hantera målet.  
+När jag  trodde att var redo började framkalla *Foreing keys* men uptäkte jag att DimPlanes var inte klar, dvs inte alla *
+flygplan* var i Factatabell och därför jag kunde inte skapa en relation mellan de. Då kunde använda *Lookup* men det var enklare skriva coden: *Select Tailnumber into DimPlaneO from FactFlight a where Tailnumber IS NULL OR
+not exists (select 1 from StagingArea.dbo.PlaneData b where b.TailNumber= a.Tailnumber)* Jag skapade en tabell i DB StagingArea och sen adderade jag kolumner för att kunna göra en *union* med min gamla tabel *Planes* och framkallade den nya tabell som DimRoutes som kunde ha koppling med min Factatabell. Jag skrev några rader för att identifiera den nya data som var inte i DimPlane i Ownertype hittade tex. på "Privat" osv. Efter det framkallade alla mina FK med coden och min StarSchema ser ut så här: 
+<img width="713" alt="image" src="https://user-images.githubusercontent.com/19158658/170056624-95b59c1c-ebe7-4c8a-bfd2-f0c6a27ace36.png">
+
+#### Då är vi redo till SSAS!
