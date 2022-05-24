@@ -2,7 +2,7 @@
 ## Flygga i SSIS med FlightData i USA från 2003-2008
 ## Datafångst, migrering och förädling 
 
-### Itzul L. Vergara 
+### Kursutbildare: Itzul L. Vergara 
 ### Lärare: Mikael Lönnroos
 ______________________
 
