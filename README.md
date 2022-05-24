@@ -29,6 +29,7 @@ ______
 * III.DW
 
 För varje DB skapade jag ett *package* i SSIS med sina respektiva *dataflow*.  
+OBS! Path av Data är: C:\Airlines\Airlines och för SuppData är: C:\Airlines\Suppdata
 
 ### I.SourceSystems
 #### Första steg: hämta data!
