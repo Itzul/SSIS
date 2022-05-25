@@ -1,0 +1,1949 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2022 8:47:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN"
+  DTS:CreatorName="WIN\Administrator"
+  DTS:DTSID="{25716FCA-4DFD-40C2-B722-09B4F7682926}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{967CB305-E76F-4B18-A9BC-E8C9EE72896D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[2003frac]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{09108D9A-6F4D-432C-A363-860CB6B6EB95}"
+      DTS:ObjectName="2003frac">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Airlines\2003\2003frac.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CE95F760-0003-4F00-BF06-B44449A670F8}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Airlines\2003\2003frac.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Year"
+              DTS:DTSID="{831C943A-B279-4298-9C92-788303DEB374}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Month"
+              DTS:DTSID="{14BC6518-7E44-46A9-BB22-A2DBC94D3484}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DayofMonth"
+              DTS:DTSID="{96F3B69E-F872-4A7B-B935-02A3DB48EFC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DayOfWeek"
+              DTS:DTSID="{0DC5502E-DCA1-464F-8B41-7FEF7D41753F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DepTime"
+              DTS:DTSID="{91BAB38D-0671-4F37-9070-7AE5343DC9A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CRSDepTime"
+              DTS:DTSID="{725208F0-D34C-40F8-8968-65C63AFDF6AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ArrTime"
+              DTS:DTSID="{32A4F9C3-651E-468B-B940-0E2F742ABB67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CRSArrTime"
+              DTS:DTSID="{D1851010-E938-446B-A20C-65EE70CB2916}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UniqueCarrier"
+              DTS:DTSID="{98007F8C-0EBB-4620-A5CD-A01CFE678007}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FlightNum"
+              DTS:DTSID="{D5D7AC88-2077-4160-8B55-418E9574EFBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TailNum"
+              DTS:DTSID="{FA2FFBBB-1EF9-4A81-AC64-E9832703EE90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ActualElapsedTime"
+              DTS:DTSID="{872403FE-112D-4CB6-8C62-7DDEC54FC7E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CRSElapsedTime"
+              DTS:DTSID="{6A16AA8D-DCA6-4069-ADBF-ABD41F408772}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AirTime"
+              DTS:DTSID="{481AA9B3-8E45-40FA-91EE-EE88751EE5AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ArrDelay"
+              DTS:DTSID="{0C9A3298-571E-4BD9-BC06-CCF2931494F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DepDelay"
+              DTS:DTSID="{8C44A1D1-F524-4502-9C9E-808B5A6B688C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Origin"
+              DTS:DTSID="{8470C12D-CE27-48B4-AC27-B48D95D3EB39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dest"
+              DTS:DTSID="{E9E20858-BB4C-4C0F-B811-77A04B93B25F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Distance"
+              DTS:DTSID="{342793DC-3F48-4F43-9E7B-CABFA34EB5B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TaxiIn"
+              DTS:DTSID="{CA7BA347-BA4F-46F0-A46E-2408800E739D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TaxiOut"
+              DTS:DTSID="{EAA7AFEA-67B5-40D2-B1A7-61CA73FDEF5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cancelled"
+              DTS:DTSID="{F3DE58F0-7D17-4FDA-BE83-39AB9590929B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CancellationCode"
+              DTS:DTSID="{DDA17677-7607-4ED6-AC33-AE597010DBF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Diverted"
+              DTS:DTSID="{791D52CB-3444-4E55-987C-1A55426E3053}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CarrierDelay"
+              DTS:DTSID="{3E8BE97A-E2A6-4DDE-9402-0A669730DC93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WeatherDelay"
+              DTS:DTSID="{008658ED-023F-40C5-BBF2-9528B7D37347}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NASDelay"
+              DTS:DTSID="{A082E04C-63C6-447A-86EE-143394814534}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SecurityDelay"
+              DTS:DTSID="{281073A1-2F3A-46FF-96A3-DD92DE2C18C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LateAircraftDelay"
+              DTS:DTSID="{F8857BE6-C421-4265-AB3B-7533EB332F05}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[win.SourceSystems]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BC05178A-8C2C-4372-A9BC-CDC268641B36}"
+      DTS:ObjectName="win.SourceSystems">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=win;Initial Catalog=SourceSystems;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[win.SourceSystems 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9EA02079-5C1F-4656-A478-D4C4C70D38B3}"
+      DTS:ObjectName="win.SourceSystems 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=win;Initial Catalog=SourceSystems;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{09D8C24C-F415-42C3-84C7-6DEFE3165625}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{DD11ED57-D02E-4B25-BCEC-5878DF89978B}"
+      DTS:ObjectName="BulkInsertTask_BatchSize">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81B39AA9-FAE7-40E1-98FD-D287FD5CDF1A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B36847D3-C1C8-4F16-9BF3-12F4CC207A57}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable1">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{09D8C24C-F415-42C3-84C7-6DEFE3165625}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Bulk Insert Task"
+      DTS:CreationName="Microsoft.BulkInsertTask"
+      DTS:Description="Bulk Insert Task"
+      DTS:DTSID="{2E06F837-9C27-42C3-8D4E-D52F34F1BC71}"
+      DTS:ExecutableType="Microsoft.BulkInsertTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Bulk Insert Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="BatchSize">@[$Package::BulkInsertTask_BatchSize]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData
+          BulkInsertTask:SourceConnectionName="{09108D9A-6F4D-432C-A363-860CB6B6EB95}"
+          BulkInsertTask:DestinationConnectionName="{BC05178A-8C2C-4372-A9BC-CDC268641B36}"
+          BulkInsertTask:DestinationTableName="[dbo].[FlightData]"
+          BulkInsertTask:KeepNulls="True"
+          BulkInsertTask:RowTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{614140F7-D43D-4F2B-B09E-A2A34FFC099E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{19943FAA-CB96-419B-98AC-BD409653AC75}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Month]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DayofMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DayofMonth]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DayofMonth]"
+                      name="DayofMonth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DayOfWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DayOfWeek]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DayOfWeek]"
+                      name="DayOfWeek"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DepTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DepTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DepTime]"
+                      name="DepTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSDepTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CRSDepTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSDepTime]"
+                      name="CRSDepTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ArrTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ArrTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ArrTime]"
+                      name="ArrTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSArrTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CRSArrTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSArrTime]"
+                      name="CRSArrTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[UniqueCarrier]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UniqueCarrier]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[UniqueCarrier]"
+                      name="UniqueCarrier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[FlightNum]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FlightNum]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[FlightNum]"
+                      name="FlightNum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TailNum]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TailNum]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TailNum]"
+                      name="TailNum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ActualElapsedTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ActualElapsedTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ActualElapsedTime]"
+                      name="ActualElapsedTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSElapsedTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CRSElapsedTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSElapsedTime]"
+                      name="CRSElapsedTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[AirTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AirTime]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[AirTime]"
+                      name="AirTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ArrDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ArrDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ArrDelay]"
+                      name="ArrDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DepDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DepDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DepDelay]"
+                      name="DepDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Origin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Origin]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Origin]"
+                      name="Origin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Dest]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dest]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Dest]"
+                      name="Dest"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Distance]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Distance]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Distance]"
+                      name="Distance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TaxiIn]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TaxiIn]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TaxiIn]"
+                      name="TaxiIn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TaxiOut]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TaxiOut]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TaxiOut]"
+                      name="TaxiOut"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Cancelled]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Cancelled]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Cancelled]"
+                      name="Cancelled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CancellationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CancellationCode]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CancellationCode]"
+                      name="CancellationCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Diverted]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Diverted]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Diverted]"
+                      name="Diverted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CarrierDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CarrierDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CarrierDelay]"
+                      name="CarrierDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[WeatherDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[WeatherDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[WeatherDelay]"
+                      name="WeatherDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[NASDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NASDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[NASDelay]"
+                      name="NASDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[SecurityDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SecurityDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[SecurityDelay]"
+                      name="SecurityDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[LateAircraftDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LateAircraftDelay]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[LateAircraftDelay]"
+                      name="LateAircraftDelay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DayofMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DayofMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DayOfWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DayOfWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DepTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DepTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CRSDepTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CRSDepTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ArrTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ArrTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CRSArrTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CRSArrTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UniqueCarrier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UniqueCarrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FlightNum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FlightNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TailNum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TailNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ActualElapsedTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ActualElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CRSElapsedTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CRSElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AirTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AirTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ArrDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ArrDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DepDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DepDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Origin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Origin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Dest]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Dest" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Distance]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TaxiIn]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TaxiIn" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TaxiOut]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TaxiOut" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Cancelled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cancelled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CancellationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CancellationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Diverted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Diverted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CarrierDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CarrierDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[WeatherDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WeatherDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NASDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NASDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SecurityDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SecurityDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LateAircraftDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LateAircraftDelay" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FlightData]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[win.SourceSystems 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[win.SourceSystems 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DayofMonth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DayofMonth"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayofMonth]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DayofMonth]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DayOfWeek]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DayOfWeek"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayOfWeek]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DayOfWeek]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DepTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DepTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DepTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CRSDepTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CRSDepTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CRSDepTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSDepTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ArrTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ArrTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArrTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ArrTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CRSArrTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CRSArrTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CRSArrTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSArrTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UniqueCarrier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UniqueCarrier"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UniqueCarrier]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[UniqueCarrier]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FlightNum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FlightNum"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightNum]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[FlightNum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TailNum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TailNum"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TailNum]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TailNum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ActualElapsedTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ActualElapsedTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActualElapsedTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ActualElapsedTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CRSElapsedTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CRSElapsedTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CRSElapsedTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CRSElapsedTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AirTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AirTime"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirTime]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[AirTime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ArrDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ArrDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArrDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ArrDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DepDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DepDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[DepDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Origin]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Origin"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Origin]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Origin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dest]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dest"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dest]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Dest]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distance]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TaxiIn]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TaxiIn"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxiIn]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TaxiIn]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TaxiOut]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TaxiOut"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxiOut]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[TaxiOut]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cancelled]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cancelled"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cancelled]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Cancelled]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CancellationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CancellationCode"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CancellationCode]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CancellationCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Diverted]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Diverted"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Diverted]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[Diverted]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CarrierDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CarrierDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[CarrierDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WeatherDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WeatherDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[WeatherDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NASDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NASDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NASDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[NASDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SecurityDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SecurityDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SecurityDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[SecurityDelay]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LateAircraftDelay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LateAircraftDelay"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LateAircraftDelay]"
+                      lineageId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[LateAircraftDelay]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayofMonth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DayofMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DayOfWeek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DayOfWeek" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DepTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CRSDepTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CRSDepTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArrTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ArrTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CRSArrTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CRSArrTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UniqueCarrier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="UniqueCarrier" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightNum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="FlightNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TailNum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="TailNum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActualElapsedTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ActualElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CRSElapsedTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CRSElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AirTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArrDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ArrDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DepDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Origin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Origin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dest]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Dest" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxiIn]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TaxiIn" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxiOut]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TaxiOut" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cancelled]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Cancelled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CancellationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CancellationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Diverted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Diverted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarrierDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="CarrierDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeatherDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="WeatherDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NASDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="NASDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SecurityDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="SecurityDelay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LateAircraftDelay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="LateAircraftDelay" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="293.833324260182,120.966667107476" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Bulk Insert Task"
+          TopLeft="346.099986688297,291.766668553882" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Data Flow Task 1"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Data Flow Task 1\Flat File Source"
+          TopLeft="173.5,133.5" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task 1\OLE DB Destination"
+          TopLeft="253,209" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="249.1,175.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.5,33.9000000000001"
+              Start="0,0"
+              End="89.5,26.4000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.95" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.95"
+                    Point2="0,16.95"
+                    Point3="4,16.95" />
+                  <mssgle:LineSegment
+                    End="85.5,16.95" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.5,16.95"
+                    Point2="89.5,16.95"
+                    Point3="89.5,20.95" />
+                  <mssgle:LineSegment
+                    End="89.5,26.4000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.75,21.95,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
