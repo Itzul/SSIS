@@ -22,6 +22,14 @@ ______
 
 ### Intro
 
+#### Package
+
+* START
+* 0.Databaser
+* I.SourceSystems
+* II.StagingArea
+* III.DW
+
 #### SSIS delen består av tre olika DB:
 
 * I.SourceSystems
@@ -38,14 +46,6 @@ Det finns två pakage till. Package START som initiera allt samt 0. Databaser so
 #### 0.Databaser
 <img width="152" alt="image" src="https://user-images.githubusercontent.com/19158658/170234161-9ff3ec50-cf9d-4b21-8db6-eade3fcc255a.png">
 
-
-#### Package
-
-* START
-* 0.Databaser
-* I.SourceSystems
-* II.StagingArea
-* III.DW
 
 
 ### I.SourceSystems
