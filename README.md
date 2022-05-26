@@ -39,7 +39,7 @@ ______
 För varje DB skapade jag ett *package* i SSIS med sina respektiva *dataflow*.  
 OBS! Path av Data är: C:\Airlines\Airlines och för SuppData är: C:\Airlines\Suppdata
 
-Det finns två pakage till. Package START som initiera allt samt 0. Databaser som inehåller koden som skapa DB och tabeller:
+
 #### START 
 <img width="330" alt="image" src="https://user-images.githubusercontent.com/19158658/170233610-a8252da4-15fd-4099-b4a7-ac700b39a302.png">
 
